@@ -65,6 +65,8 @@ def main():
 
         i, j = read_move(game)
         game[i][j] = marks[turn]
+        print('Current board:')
+        print_board(game)
 
         if is_win(game):
             print("Win!")
