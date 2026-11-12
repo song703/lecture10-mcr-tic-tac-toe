@@ -49,6 +49,12 @@ def print_board(game):
         print(" ".join(row))
 
 
+def show_board(game, label):
+    print(label)
+    print_board(game)
+    print()
+
+
 def main():
     game = [[" " for _ in range(3)] for _ in range(3)]
     marks = {False: "X", True: "O"}  # False = Player 1, True = Player 2
@@ -57,6 +63,7 @@ def main():
 
     print("X = Player 1")
     print("O = Player 2")
+    show_board(game, "Initial board:")
 
     for n in range(9):
         turn = not turn
@@ -65,6 +72,7 @@ def main():
 
         i, j = read_move(game)
         game[i][j] = marks[turn]
+        show_board(game, "Current board:")
 
         if is_win(game):
             print("Win!")
@@ -73,8 +81,6 @@ def main():
 
     if not winner:
         print("Tie!")
-
-    print_board(game)
 
 
 if __name__ == "__main__":
