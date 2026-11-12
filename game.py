@@ -57,6 +57,9 @@ def main():
 
     print("X = Player 1")
     print("O = Player 2")
+    print("Initial board:")
+    print_board(game)
+    print()
 
     for n in range(9):
         turn = not turn
@@ -67,6 +70,7 @@ def main():
         game[i][j] = marks[turn]
         print('Current board:')
         print_board(game)
+        print()
 
         if is_win(game):
             print("Win!")
